@@ -1,24 +1,56 @@
-# README
+# Find a hobby！のER図
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+| ## usersテーブル                              |
+|                                               |
+| nickname （string型, NOT NULL）               |
+| email （string型, NOT NULL, ユニーク制約）     |
+| encrypted_password（string型, NOT NULL）      |
+| last_name（string型, NOT NULL）               |
+| first_name（string型, NOT NULL）              |
+| last_name_kana（string型, NOT NULL）          |
+| first_name_kana（string型, NOT NULL）         |
+| from_id（integer型, NOT NULL）                |
+| city（string型, NOT NULL）                    |
+| number（string型, NOT NULL）                  |
+| phone（string型, NOT NULL）                   |
+| birthday（date型, NOT NULL）                  | 
+| skill（string型, NOT NULL）                   |
+| profile（text型, NOT NULL）                   |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :hobbies
+- has_many :comments
 
-* Database creation
+| ## hobbiesテーブル                            |
+|                                              |
+| where_id（integer型, NOT NULL）               |
+| category_id（integer型, NOT NULL）            |
+| type（string型, NOT NULL）                    |
+| text（text型, NOT NULL）                      |
+| cost（integer型）                             |
+| count_id（integer型）                         |
+| from_id（integer型）                          |
+| city（string型）                              |
+| user（references型, NOT NULL, 外部キー）       |
 
-* Database initialization
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- has_many :comments
+- belongs_to :user
 
-* Deployment instructions
 
-* ...
+| ## commentsテーブル                            |
+|                                               |
+| comment（text型, NOT NULL）                    |
+| hobby（references型, NOT NULL, 外部キー）      |
+| user（references型, NOT NULL, 外部キー）       |
+
+
+### Association
+
+- belongs_to :hobby
+- belongs_to :user
