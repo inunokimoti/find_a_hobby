@@ -1,8 +1,9 @@
 # Find a hobby！のER図
 
 
-|## usersテーブル                               |
-|                                               |
+## usersテーブル
+|Column                                         |
+|-----------------------------------------------|
 |nickname （string型, NOT NULL）                |
 |email （string型, NOT NULL, ユニーク制約）      |
 |encrypted_password（string型, NOT NULL）       |
@@ -24,8 +25,9 @@
 - has_many :hobbies
 - has_many :comments
 
-|## hobbiesテーブル                             |
-|                                               |
+## hobbiesテーブル
+|Column                                         |
+|-----------------------------------------------|
 |where_id（integer型, NOT NULL）                |
 |category_id（integer型, NOT NULL）             |
 |type（string型, NOT NULL）                     |
@@ -43,8 +45,9 @@
 - belongs_to :user
 
 
-|## commentsテーブル                            |
-|                                               |
+## commentsテーブル
+|Column                                         |
+|-----------------------------------------------|
 |comment（text型, NOT NULL）                    |
 |hobby（references型, NOT NULL, 外部キー）       |
 |user（references型, NOT NULL, 外部キー）        |
