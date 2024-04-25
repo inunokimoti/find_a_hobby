@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :city, presence: true
   validates :number, presence: true
+  validates :phone, format: { with: /\A\d{10,11}\z/, message: "is 10 or 11 digits only" }
   validates :birthday, presence: true
   validates :skill, presence: true
   validates :profile, presence: true
