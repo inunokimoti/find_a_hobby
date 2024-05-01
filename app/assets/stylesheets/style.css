@@ -76,7 +76,7 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #375623;
   text-decoration: none;
   user-select: none;
 }
@@ -180,6 +180,27 @@ a {
   text-decoration: underline;
 }
 
+/* 商品画像 */
+.img-upload {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+  padding-left: 50px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
+
+/* /商品画像 */
+
+
 /* 新規登録ページ */
 .form-group {
   width: 50%;
@@ -208,6 +229,9 @@ a {
   font-size: 10px;
 }
 
+.input-cost-wrap{
+  display: flex;
+}
 
 /* 詳細ページ */
 .prototype__wrapper{
