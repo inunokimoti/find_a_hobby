@@ -10,6 +10,7 @@ module FindAHobby
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.active_storage.variant_processor = :mini_magick
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -18,5 +19,6 @@ module FindAHobby
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end

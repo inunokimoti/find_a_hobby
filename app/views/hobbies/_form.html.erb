@@ -1,22 +1,77 @@
-<%= form_with model: モデル名, local: true do |f|%>
-  <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+<%= form_with model: @hobby, local: true do |f|%>
+
+<%#= render 'shared/error_messages', model: f.object %>
+
+  <%# 商品画像 %>
+  <div class="img-upload">
+    <div class="form-text">
+      投稿画像
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <%# /商品画像 %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">趣味の場所</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:where_id, Where.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
   </div>
 
-  <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">区分</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>  
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">趣味の種類</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :type, class:"input-default", id:"type", placeholder:"例）スカイダイビング"%>
   </div>
 
-  <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+  <div class="form-group">
+
+    <div class='form-text-wrap'>
+      <label class="form-text">投稿内容の紹介</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :text, class:"input-default", id:"text", placeholder:"例）一年前からやってみたいと思っていたスカイダイビングを始めました。"%>
   </div>
 
-  <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">費用/月謝</label>
+    </div>
+    <div class='input-cost-wrap'>
+      <%= f.text_field :cost, class:"input-default", id:"cost", placeholder:"例）5000"%><p>円</p>
+      <%= f.collection_select(:count_id, Count.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">趣味を行った場所</label>
+    </div>
+    <div class='input-cost-wrap'>
+      <label class="form-text">都道府県
+        <%= f.collection_select(:from_id, From.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </label>
+      <label class="form-text">市区町村
+        <%= f.text_field :city, class:"input-default", id:"cost", placeholder:"例）浜松市"%>
+      </label>
+    </div>
   </div>
 
   <div class="actions">
