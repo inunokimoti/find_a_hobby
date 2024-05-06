@@ -2,6 +2,7 @@ class HobbiesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    @hobbies = Hobby.all
   end
 
   def new
