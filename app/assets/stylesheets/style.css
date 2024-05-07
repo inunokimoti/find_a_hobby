@@ -132,6 +132,77 @@ a {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+/* index */
+
+.index_title{
+  text-align: center;
+  animation: color-change 2s linear infinite;
+  margin:20px;
+  font-size:30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@keyframes color-change {
+  0%,100%{
+	color:#ff1493;
+  }
+
+  25%{
+	color:#7fff00;
+  }
+  
+  50%{
+	color:#0091EA;
+  }
+  
+  75%{
+	color:#9400d3;
+  }
+}
+
+.index_new{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 50%;
+}
+
+.index_item{
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+
+.index_type_idd{
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #FF9900;
+  text-align: center;
+}
+
+.index_image_idd{
+  margin-bottom: 16px;
+}
+
+.index_category{
+  display: block;
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #375623;
+  text-decoration: underline;
+}
+
+.index_user_idd{
+  display: block;
+  font-size: 12px;
+  color: #05a058;
+  text-align: right;
+  text-decoration: underline;
+}
 
 /* メイン */
 .main{
@@ -162,6 +233,7 @@ a {
 }
 .card__img {
   margin-bottom: 16px;
+
 }
 .card__title {
   display: block;

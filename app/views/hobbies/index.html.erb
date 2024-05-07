@@ -6,8 +6,11 @@
         <%= link_to current_user.nickname + "さん", user_path(current_user.id), class: :greeting__link%>
       </div>
     <% end %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+    <div class="index_title">
+    <%= "NEW"  %>
+    </div>
+    <div class="index_new">
+      <%= render partial: 'hobby', collection: @hobbies %>
     </div>
   </div>
 </main>
