@@ -6,7 +6,10 @@
         <%= link_to current_user.nickname + "さん", user_path(current_user.id), class: :greeting__link%>
       </div>
     <% end %>
-    <div class="card__wrapper">
+    <div class="index_title">
+    <%= "NEW"  %>
+    </div>
+    <div class="index_new">
       <%= render partial: 'hobby', collection: @hobbies %>
     </div>
   </div>
