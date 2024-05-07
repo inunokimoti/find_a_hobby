@@ -2,7 +2,7 @@ class HobbiesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @hobbies = Hobby.all
+    @hobbies = Hobby.order(created_at: :desc).first(3)
   end
 
   def new
