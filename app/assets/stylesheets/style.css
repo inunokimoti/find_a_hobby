@@ -204,6 +204,14 @@ a {
   text-decoration: underline;
 }
 
+.category_title{
+  text-align: center;
+  font-weight: bold;
+  color: #0d1bb2;
+  background-color: #9cd1f2;
+  font-size: 30px;
+}
+
 /* メイン */
 .main{
   background-color: #FFF2CC;

@@ -12,5 +12,16 @@
     <div class="index_new">
       <%= render partial: 'hobby', collection: @hobbies %>
     </div>
+    <div class="category_title">
+    <%= "Category"  %>
+    </div>
+    <div class="index_item">
+    <%= link_to "アート", root_path, class: :index_type_idd%>
+    <%= link_to image_tag(hobby.image , class: :index_image_idd ), root_path%>
+      <p class="index_category">
+        <%= hobby.category.name %>
+      </p>
+      <%= link_to "投稿：" + hobby.user.nickname + "さん", root_path, class: :index_user_idd %>
+    </div>
   </div>
 </main>
