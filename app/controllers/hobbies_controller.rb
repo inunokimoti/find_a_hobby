@@ -3,6 +3,7 @@ class HobbiesController < ApplicationController
 
   def index
     @hobbies = Hobby.order(created_at: :desc).first(3)
+    @hobbies2 = Hobby.order(created_at: :desc)
   end
 
   def new
