@@ -6,22 +6,260 @@
         <%= link_to current_user.nickname + "さん", user_path(current_user.id), class: :greeting__link%>
       </div>
     <% end %>
+
     <div class="index_title">
     <%= "NEW"  %>
     </div>
     <div class="index_new">
       <%= render partial: 'hobby', collection: @hobbies %>
     </div>
+
     <div class="category_title">
     <%= "Category"  %>
     </div>
-    <div class="index_item">
-    <%= link_to "アート", root_path, class: :index_type_idd%>
-    <%= link_to image_tag(hobby.image , class: :index_image_idd ), root_path%>
-      <p class="index_category">
-        <%= hobby.category.name %>
-      </p>
-      <%= link_to "投稿：" + hobby.user.nickname + "さん", root_path, class: :index_user_idd %>
+
+    <div class="index_category_item">
+      <div class="index_category_btn">
+      <%= link_to "アート", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 2 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>   
+        <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "育成／飼育", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 3 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "イベント", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 4 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "演奏", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 5 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "学習", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 6 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "観察", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 7 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>      
+
+      <div class="index_category_btn">
+      <%= link_to "鑑賞", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 8 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "観戦", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 9 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "グルメ", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 10 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "ゲーム", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 11 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
     </div>
-  </div>
+
+    <div class="index_category_item">
+      <div class="index_category_btn">
+      <%= link_to "健康／美容", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 12 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "収集／採取", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 13 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "スポーツ", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 14 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "体験", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 15 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "特技", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 16 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "ミュージック", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 17 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "ものづくり", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 18 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "料理", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 19 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "旅行", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 20 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+
+      <div class="index_category_btn">
+      <%= link_to "その他", root_path, class: :index_category_btn_idd %>
+        <% @hobbies2.each do |hobby| %>
+          <% if hobby.category_id == 21 %>
+            <div class="category_image">
+              <%= link_to image_tag(hobby.image, class: :index_image_idd ), root_path%>
+            </div>
+            <% break %>
+          <% end %>
+      <% end %>
+      </div>
+    </div>
+   </div>
 </main>

@@ -141,6 +141,7 @@ a {
   font-size:30px;
   font-weight: bold;
   text-decoration: underline;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
 }
 
 @keyframes color-change {
@@ -210,8 +211,31 @@ a {
   color: #0d1bb2;
   background-color: #9cd1f2;
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
+.index_category_item{
+  display: flex;
+  justify-content: center;
+}
+
+.index_category_btn{
+  align-items: center;
+  margin-right: 20px;
+}
+
+.index_category_btn_idd{
+  font-size: 15px;
+  color: #eb1c92;
+  text-decoration: underline;
+  font-family: "HG丸ｺﾞｼｯｸM-PRO";
+}
+
+.category_image{
+  width: 80px;
+  height: 100px;
+  margin-bottom: 10px;
+}
 /* メイン */
 .main{
   background-color: #FFF2CC;
