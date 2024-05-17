@@ -20,6 +20,7 @@ class HobbiesController < ApplicationController
   end
 
   def show
+    @hobby = Hobby.find(params[:id])
   end
 
   private
