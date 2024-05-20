@@ -2,9 +2,9 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= "プロトタイプのタイトル"%>
+        <%= @hobby.type %>
       </p>
-      <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %>
+      <%= link_to "投稿者:" + @hobby.user.nickname + "さん", root_path, class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="prototype__manage">
           <%= link_to "編集する", root_path, class: :prototype__btn %>
@@ -12,19 +12,37 @@
         </div>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag "プロトタイプの画像" %>
+        <%= image_tag(@hobby.image) %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__title">Where</p>
           <p class="detail__message">
-            <%= "プロトタイプのキャッチコピー" %>
+            <%= @hobby.where.name %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">Category</p>
           <p class="detail__message">
-            <%= "プロトタイプのコンセプト" %>
+            <%= @hobby.category.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">Cost</p>
+          <p class="detail__message">
+            <%= @hobby.cost.to_s + "円" + @hobby.count.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">Address</p>
+          <p class="detail__message">
+            <%= @hobby.from.name + @hobby.city %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">Text</p>
+          <p class="detail__message">
+            <%= @hobby.text %>
           </p>
         </div>
       </div>

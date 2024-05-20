@@ -19,6 +19,9 @@ class HobbiesController < ApplicationController
     end
   end
 
+  def show
+    @hobby = Hobby.find(params[:id])
+  end
 
   private
   def move_to_index
