@@ -231,6 +231,10 @@ a {
   font-family: "HG丸ｺﾞｼｯｸM-PRO";
 }
 
+.index_category_btn_idd:hover{
+  color: #ec91c4;
+}
+
 .category_image{
   width: 80px;
   height: 100px;
@@ -284,7 +288,7 @@ a {
   text-decoration: underline;
 }
 
-/* 商品画像 */
+/* 投稿画像 */
 .img-upload {
   display: flex;
   justify-content: center;
@@ -302,7 +306,7 @@ a {
   margin-bottom: 15px;
 }
 
-/* /商品画像 */
+/* /投稿画像 */
 
 
 /* 新規登録ページ */
@@ -338,59 +342,70 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
+.hobby__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
+.hobby__hedding{
   font-size: 24px;
+  color: #FF9900;
   font-weight: bold;
   text-align: center;
 }
-.prototype__user{
+.hobby__user{
   display: block;
   font-size: 16px;
-  color: #999;
+  color: #3b4043;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.hobby__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.hobby__detail{
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
+  color: darkcyan;
 }
-.prototype__manage{
+
+.detail__message{
+  background-color: white;
+  margin-top: 10px;
+}
+
+.hobby__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+
+.hobby__btn{
   display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
+  padding: 0.8em 3.2em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #375623;
   text-decoration: none;
   user-select: none;
-  border: 1px #999 solid;
+  border: 1px #375623 solid;
   border-radius: 3px;
   transition: 0.4s ease;
-  margin: 0 4px;
+  margin: 0 15px;
 }
-.prototype__btn:hover{
+.hobby__btn:hover{
   color: #fff;
-  background: #999;
+  background: #375623;
 }
 
-.prototype__comments{
+.hobby__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -467,7 +482,7 @@ a {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .hobby_image{
     width: 60%;
   }
 }
