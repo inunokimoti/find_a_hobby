@@ -23,6 +23,10 @@ class HobbiesController < ApplicationController
     @hobby = Hobby.find(params[:id])
   end
 
+  def edit
+    @hobby = Hobby.find(params[:id])
+  end
+
   private
   def move_to_index
     unless user_signed_in?
