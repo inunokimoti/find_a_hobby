@@ -25,6 +25,24 @@ class HobbiesController < ApplicationController
 
   def edit
     @hobby = Hobby.find(params[:id])
+    unless @hobby.user_id == current_user.id
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    @hobby = Hobby.find(params[:id])
+    if @hobby.update(hobby_params)
+      redirect_to hobby_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    hobby = Hobby.find(params[:id])
+    hobby.destroy
+    redirect_to root_path
   end
 
   private
