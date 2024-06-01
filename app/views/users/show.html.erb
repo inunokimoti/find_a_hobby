@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname + "さんのプロフィール" %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">居住地</th>
+            <td class="table__col2"><%= @user.from.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お誕生日</th>
+            <td class="table__col2"><%= @user.birthday.strftime("%Y年%m月%d日") %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">特技</th>
+            <td class="table__col2"><%= @user.skill %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">自己紹介</th>
+            <td class="table__col2"><%= @user.profile %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= @user.nickname + "さんの投稿" %>
+      </h2>
+      <div class="user__card">
+        <%= render partial: 'hobbies/hobby', collection: @user.hobbies %>
+      </div>
+    </div>
+  </div>
+</div>

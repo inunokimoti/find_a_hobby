@@ -4,7 +4,7 @@
     <p class="index_category">
       <%= hobby.category.name %>
     </p>
-    <%= link_to "投稿：" + hobby.user.nickname + "さん", root_path, class: :index_user_idd %>
+    <%= link_to "投稿：" + hobby.user.nickname + "さん", user_path(hobby.user_id), class: :index_user_idd %>
 </div>
 
 
