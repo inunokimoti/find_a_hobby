@@ -4,7 +4,7 @@
       <p class="hobby__hedding">
         <%= @hobby.type %>
       </p>
-      <%= link_to "投稿者:" + @hobby.user.nickname + "さん", root_path, class: :hobby__user %>
+      <%= link_to "投稿者:" + @hobby.user.nickname + "さん", user_path(@hobby.user_id), class: :hobby__user %>
       <% if user_signed_in? && @hobby.user_id == current_user.id %>
         <div class="hobby__manage">
           <%= link_to "編集する", edit_hobby_path, class: :hobby__btn %>

@@ -1,10 +1,10 @@
 <div class="index_item">
-  <%= link_to hobby.type, root_path, class: :index_type_idd%>
+  <div class="index_type_idd">
+    <%= hobby.type %>
+  </div>
   <%= link_to image_tag(hobby.image, class: :index_image_idd ), hobby_path(hobby.id) %>
     <p class="index_category">
-      <%= hobby.category.name %>
+      <%= link_to hobby.category.name, root_path %>
     </p>
     <%= link_to "投稿：" + hobby.user.nickname + "さん", user_path(hobby.user_id), class: :index_user_idd %>
 </div>
-
-
