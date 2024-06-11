@@ -21,6 +21,8 @@ class HobbiesController < ApplicationController
 
   def show
     @hobby = Hobby.find(params[:id])
+    @comment = Comment.new
+    @comments = @hobby.comments.includes(:user)
   end
 
   def edit
